@@ -8,6 +8,7 @@ public class OrderInfo {
     private int orderId;
     private String orderNum;
     private String name;
+    private int itemId;
     private int qty;
     private double price;
     private String orderStatus;
@@ -17,10 +18,11 @@ public class OrderInfo {
     public OrderInfo() {
     }
 
-    public OrderInfo(int orderId, String orderNum, String name, int qty, double price, String orderStatus, String paymentStatus, String accountNum) {
+    public OrderInfo(int orderId, String orderNum, String name, int itemId, int qty, double price, String orderStatus, String paymentStatus, String accountNum) {
         this.orderId = orderId;
         this.orderNum = orderNum;
         this.name = name;
+        this.itemId = itemId;
         this.qty = qty;
         this.price = price;
         this.orderStatus = orderStatus;
@@ -50,6 +52,14 @@ public class OrderInfo {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getItemId() {
+        return itemId;
+    }
+
+    public void setItemId(int itemId) {
+        this.itemId = itemId;
     }
 
     public int getQty() {
@@ -98,6 +108,7 @@ public class OrderInfo {
                 "orderId=" + orderId +
                 ", orderNum='" + orderNum + '\'' +
                 ", name='" + name + '\'' +
+                ", itemId=" + itemId +
                 ", qty=" + qty +
                 ", price=" + price +
                 ", orderStatus='" + orderStatus + '\'' +

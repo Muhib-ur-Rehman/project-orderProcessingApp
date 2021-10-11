@@ -18,7 +18,8 @@ public class OrderProcessor {
         System.out.println("Message received from queue : " + order);
         if (order.getPaymentStatus().equals("INITIATED")) {
             this.orderService.saveOrder(order);
-        } else if (!order.getPaymentStatus().equals("INITIATED")){
+        }
+        if (!order.getPaymentStatus().equals("INITIATED")){
             this.orderService.updateOrder(order.getOrderNum(),order.getPaymentStatus(),order.getOrderStatus());
         }
     }
