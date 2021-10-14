@@ -13,6 +13,10 @@ public class OrderService {
     @Autowired
     private OrderRepo orderRepo;
 
+    public OrderService(OrderRepo orderRepo){
+        this.orderRepo=orderRepo;
+    }
+
     public OrderInfo saveOrder(OrderInfo order){
         return this.orderRepo.save(order);
     }
