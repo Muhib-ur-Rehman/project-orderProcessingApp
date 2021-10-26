@@ -13,6 +13,10 @@ public class OrderProcessor {
     @Autowired
     OrderService orderService;
 
+    public OrderProcessor(OrderService orderService){
+        this.orderService=orderService;
+    }
+
     @RabbitListener(queues = OrderConfig.QUEUE)
     public void consumeMessageFromQueue(OrderInfo order){
         System.out.println("Message received from queue : " + order);
